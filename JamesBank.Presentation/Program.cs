@@ -45,9 +45,10 @@
                 //switch-case to check menu choice
                 switch (mainMenuChoice)
                 {
-                    case 1://TO DO:DISPLAY Customers menu
+                    case 1: CustomersMenu();
                         break;
-                    case 2://TO DO:DISPLAY Customers menu
+                    case 2:
+                        AccountsMenu();
                         break;
                     case 3://TO DO:DISPLAY Customers menu
                         break;
@@ -70,4 +71,51 @@
         System.Console.ReadKey();
 
     }
+
+    static void CustomersMenu()
+    {
+        //variable to store customer's menu
+        int customersMenuChoice = -1;
+
+        //do while starts because it's something going round and round several times
+        do
+        {
+            //Print cuctomers
+            System.Console.WriteLine("\n:::Customers Menu:::");
+            System.Console.WriteLine("1.Add Customers");
+            System.Console.WriteLine("2. Delete Customers");
+            System.Console.WriteLine("3. Update Customer");
+            System.Console.WriteLine("4: View Customers");
+            System.Console.WriteLine("5. Return to Main Menu");
+
+            //Accept the customer's menu choice
+            System.Console.Write("Enter Choice: ");
+            //Read the value and assign to customersMenuChoice
+            customersMenuChoice = System.Convert.ToInt32(System.Console.ReadLine());
+        } while(customersMenuChoice != 0);
+    }
+
+    static void AccountsMenu()
+    {
+        //Variable to store accounts menu choice
+        int accountsMenuChoice = -1;
+
+        //do while loop
+        do
+        {
+            //print Account menu's Choices
+            System.Console.WriteLine("\n:::Account's Menu:::");
+            System.Console.WriteLine("1.Add Account");
+            System.Console.WriteLine("2. Delete Account");
+            System.Console.WriteLine("3. Update Account");
+            System.Console.WriteLine("4: View Account");
+            System.Console.WriteLine("5. Return to Main Menu");
+
+            //Accept the customer's menu choice
+            System.Console.Write("Enter Choice: ");
+            //Read the value and assign to customersMenuChoice
+            accountsMenuChoice = System.Convert.ToInt32(System.Console.ReadLine());
+        } while (accountsMenuChoice != 0);
+    }
+    
 }
