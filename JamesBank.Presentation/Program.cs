@@ -16,7 +16,7 @@ class Program
         userName = System.Console.ReadLine(); //
         //The readline is a predefined method of Console class, it accepts the value from the keyboard and returns the same as a string type;
         ////read Password from Keyboard if only username is entered
-        if(userName != "")
+        if (userName != "")
         {
             System.Console.Write("Password:");
             password = System.Console.ReadLine();
@@ -24,13 +24,13 @@ class Program
 
         //check username and password to validate
 
-        if(userName =="system" && password == "manager")
+        if (userName == "system" && password == "manager")
         {
             int mainMenuChoice = -1;
             do
             {
                 //Declare a value to store menu choice
-                
+
 
                 System.Console.WriteLine("\n::Main Menu");
                 System.Console.WriteLine("1. Customers");
@@ -47,9 +47,9 @@ class Program
                 //switch case to check menu choice
                 switch (mainMenuChoice)
                 {
-                    case 1: //To DO:Display customers menu
+                    case 1: CustomersMenu();
                         break;
-                    case 2:
+                    case 2:AccountsMenu();
                         break;
                     case 3:
                         break;
@@ -70,4 +70,49 @@ class Program
         System.Console.WriteLine("Thank you! Visit again");
         System.Console.ReadKey();
     }
+
+    static void CustomersMenu()
+    {
+        //variable to store CustomersMenu Choice
+        int customersMenuChoice = -1;
+
+        //do while loop
+        do
+        {
+            //print customers menu
+            System.Console.WriteLine("\n::Customers Menu");
+            System.Console.WriteLine("1. Add Customer");
+            System.Console.WriteLine("2. Delete Customer");
+            System.Console.WriteLine("3. Update Customer");
+            System.Console.WriteLine("4. View Customer");
+            System.Console.WriteLine("0. Back to Main Menu");
+
+            //accept customers menu choice
+            System.Console.Write("Enter Choice: ");
+            customersMenuChoice = System.Convert.ToInt32(System.Console.ReadLine());
+
+        } while (customersMenuChoice != 0);
+    }
+
+    static void AccountsMenu()
+    {
+        int accountsMenuChoice = -1;
+        //do while loop
+        do
+        {
+            //print Accounts menu
+            System.Console.WriteLine("\n::Accounts Menu");
+            System.Console.WriteLine("1. Display Account");
+            System.Console.WriteLine("2. Add Account");
+            System.Console.WriteLine("3. Update Account");
+            System.Console.WriteLine("4. Delete Account");
+            System.Console.WriteLine("0. Back to Main Menu");
+
+            //accept account menu choice
+            System.Console.Write("Enter Choice");
+            accountsMenuChoice = System.Convert.ToInt32(System.Console.ReadLine());
+        } while (accountsMenuChoice != 0);
+
+    }
+
 }
